@@ -2,7 +2,9 @@ package com.poo.slither.model;
 
 import javafx.scene.paint.Color;
 
-public interface Segment {
+import java.io.Serializable;
+
+public interface Segment extends Serializable {
     double getX();
     double getY();
     void moveTo(double x, double y);

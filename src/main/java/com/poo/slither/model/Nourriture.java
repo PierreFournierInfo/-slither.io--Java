@@ -2,7 +2,9 @@ package com.poo.slither.model;
 
 import javafx.scene.paint.Color;
 
-public interface Nourriture {
+import java.io.Serializable;
+
+public interface Nourriture extends Serializable {
     double getX();
     double getY();
     Color getColor();

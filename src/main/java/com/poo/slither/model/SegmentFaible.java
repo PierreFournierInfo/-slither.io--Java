@@ -2,24 +2,24 @@ package com.poo.slither.model;
 
 import javafx.scene.paint.Color;
 
-public final class SegmentNormal extends Entity implements Segment {
-    public SegmentNormal(double x, double y) {
+public class SegmentFaible extends Entity implements Segment {
+
+    public SegmentFaible(double x, double y) {
         super(x, y);
     }
 
     @Override
     public Color getColor() {
-        return Color.BLUE;
+        return Color.BURLYWOOD;
     }
 
     @Override
     public boolean handelCollision(Serpent serpent1, Serpent serpent2) {
-        return true;
+        return serpent1.cutFrom(this);
     }
 
     @Override
     public Nourriture toFood() {
-        return new NourritureSimple(getX(), getY());
+        return new NourriturePont(getX(), getY());
     }
-
 }

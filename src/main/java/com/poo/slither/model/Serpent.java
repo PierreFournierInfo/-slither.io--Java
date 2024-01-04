@@ -107,4 +107,19 @@ public class Serpent {
         serpent.remove(0);
         return serpent.size() <= 1;
     }
+
+    boolean cutFrom(SegmentFaible segmentFaible) {
+        int i;
+        for(i = 0; i < serpent.size(); i++) {
+            Segment segment = serpent.get(i);
+            if(segment.getX() == segmentFaible.getX() && segment.getY() == segmentFaible.getY()) {
+                break;
+            }
+        }
+
+        if (serpent.size() > i) {
+            serpent.subList(i, serpent.size()).clear();
+        }
+        return isAlive();
+    }
 }

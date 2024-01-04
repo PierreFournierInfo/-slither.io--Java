@@ -2,13 +2,14 @@ package com.poo.slither.model;
 
 import javafx.geometry.Point2D;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 import static com.poo.slither.model.CollisionUtils.collisionSerpents;
 
-public class Jeu {
+public class Jeu implements Serializable {
     private final List<Serpent> serpents;
     private final List<Nourriture> nourritures;
     private final int nb_food;
@@ -63,14 +64,14 @@ public class Jeu {
         double y = random.nextDouble() * 3000;
         Nourriture nourriture;
 
-        int randomType = new Random().nextInt(1);
+        int randomType = new Random().nextInt(5);
 
         nourriture = switch (randomType) {
             case 0 -> new NourritureSimple(x, y);
-            /*case 1 -> new NourritureVitesse(x, y);
+            case 1 -> new NourritureVitesse(x, y);
             case 2 -> new NourriturePoison(x, y);
             case 3 -> new NourritureBouclier(x, y);
-            case 4 -> new NourriturePont(x, y);*/
+            case 4 -> new NourriturePont(x, y);
             default -> throw new IllegalStateException("Unexpected value: " + randomType);
         };
 
@@ -141,7 +142,10 @@ public class Jeu {
                     Segment segmentVictime = collisionSerpents(snakeA, snakeB);
                     if (segmentVictime != null) {
                         System.out.println("Collision serpents");
-                        segmentVictime.handelCollision(snakeA, snakeB);
+                        boolean isDead = segmentVictime.handelCollision(snakeA, snakeB);
+                        if(isDead) {
+                            snakeA.meurt();
+                        }
                     }
                 }
             }
