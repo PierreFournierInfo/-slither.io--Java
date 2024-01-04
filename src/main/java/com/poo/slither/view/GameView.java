@@ -15,12 +15,14 @@ public class GameView extends Pane {
     private final Canvas canvas;
     private final GraphicsContext context;
     private final Jeu jeu;
+    private final Serpent camera;
 
-    public GameView(Jeu jeu) {
+    public GameView(Jeu jeu, Serpent serpent) {
         this.canvas = new Canvas(WIDTH, HEIGHT);
         this.context = canvas.getGraphicsContext2D();
         this.getChildren().add(canvas);
         this.jeu = jeu;
+        this.camera = serpent;
     }
 
     public void renderGame() {
@@ -38,7 +40,7 @@ public class GameView extends Pane {
     }
 
     private void dessineSerpent(Serpent serpent) {
-        Segment tete = jeu.getSerpents().get(0).getTete();
+        Segment tete = camera.getTete();
         if(tete == null) return;
         double offsetX = canvas.getWidth() / 2 - tete.getX();
         double offsetY = canvas.getHeight() / 2 - tete.getY();
@@ -59,7 +61,7 @@ public class GameView extends Pane {
     }
 
     private void dessineNourriture(Nourriture food) {
-        Segment tete = jeu.getSerpents().get(0).getTete();
+        Segment tete = camera.getTete();
         if(tete == null) return;
         double offsetX = canvas.getWidth() / 2 - tete.getX();
         double offsetY = canvas.getHeight() / 2 - tete.getY();
