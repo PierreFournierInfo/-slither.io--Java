@@ -2,7 +2,7 @@ package com.poo.slither.model;
 
 import javafx.scene.paint.Color;
 
-public class SegmentNormal extends Entity implements Segment {
+public final class SegmentNormal extends Entity implements Segment {
     public SegmentNormal(double x, double y) {
         super(x, y);
     }

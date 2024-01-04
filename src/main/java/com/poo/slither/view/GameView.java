@@ -6,22 +6,24 @@ import com.poo.slither.model.Segment;
 import com.poo.slither.model.Serpent;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 
-public class GameView {
+public class GameView extends Pane {
     public static int WIDTH = 800;
     public static int HEIGHT = 600;
     private final Canvas canvas;
     private final GraphicsContext context;
     private final Jeu jeu;
 
-    public GameView(Canvas canvas, Jeu jeu) {
-        this.canvas = canvas;
+    public GameView(Jeu jeu) {
+        this.canvas = new Canvas(WIDTH, HEIGHT);
         this.context = canvas.getGraphicsContext2D();
+        this.getChildren().add(canvas);
         this.jeu = jeu;
     }
 
-    public void dessineJeu() {
+    public void renderGame() {
         context.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
         context.setFill(Color.BLACK);
         context.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());

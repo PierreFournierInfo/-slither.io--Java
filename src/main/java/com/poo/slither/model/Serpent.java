@@ -75,4 +75,36 @@ public class Serpent {
     public boolean isAlive() {
         return !serpent.isEmpty();
     }
+
+    public void meurt() {
+        serpent.clear();
+    }
+
+    public void increaseSpeed() {
+        if(speedPoints > 0)
+            speed = 5;
+    }
+
+    public void resetSpeedToDefault() {
+        speed = 3;
+    }
+
+    public int getSpeedPoints() {
+        return speedPoints;
+    }
+
+    public void gainSpeedPoints() {
+        speedPoints += 1;
+    }
+
+    public void removeSpeedPoints() {
+        if(speedPoints > 0)
+            speedPoints -= 1;
+    }
+
+    boolean enlevePremierSegment() {
+        if(serpent.isEmpty()) return true;
+        serpent.remove(0);
+        return serpent.size() <= 1;
+    }
 }

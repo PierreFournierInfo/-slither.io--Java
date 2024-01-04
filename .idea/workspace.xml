@@ -6,6 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="eb85021b-2d04-4ca2-aaa3-584a29672d7a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poo/slither/Game.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poo/slither/Slither.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poo/slither/Slither.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/Jeu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/Jeu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/NourritureSimple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/NourritureSimple.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/SegmentNormal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/SegmentNormal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/SegmentNormalFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/SegmentNormalFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/Serpent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/Serpent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poo/slither/view/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poo/slither/view/GameView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

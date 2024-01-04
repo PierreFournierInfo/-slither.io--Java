@@ -2,7 +2,7 @@ package com.poo.slither.model;
 
 import javafx.scene.paint.Color;
 
-public class NourritureSimple extends Entity implements Nourriture {
+public final class NourritureSimple extends Entity implements Nourriture {
     public NourritureSimple(double x, double y) {
         super(x, y);
     }
