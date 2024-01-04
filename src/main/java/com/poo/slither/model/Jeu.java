@@ -26,7 +26,7 @@ public class Jeu implements Serializable {
     public void addSerpent(Serpent serpent) {
         serpents.add(0, serpent);
     }
-    public void removeSerpent(Serpent serpent) {
+    private void removeSerpent(Serpent serpent) {
         serpents.remove(serpent);
     }
 
@@ -123,12 +123,7 @@ public class Jeu implements Serializable {
             if(isDead) {
                 removeSerpent(serpent);
             }
-            int to_add = eatenFood.size();
-            getFood().removeAll(eatenFood);
-            for(int i = 0; i < to_add; i++) {
-                addNourriture();
-            }
-
+            nourritures.removeAll(eatenFood);
         }
     }
 

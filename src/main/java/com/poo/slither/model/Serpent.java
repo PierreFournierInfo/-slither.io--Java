@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 public class Serpent {
-    private static final int DEFAULT_SIZE = 10;
+    public static final int DEFAULT_SIZE = 10;
     private final List<Segment> serpent;
     private SegmentFactory segmentFactory;
     private double deltaX, deltaY;
@@ -45,7 +45,7 @@ public class Serpent {
     public Segment getTete() {
         try {
             return serpent.get(0);
-        } catch (NoSuchElementException e) {
+        } catch (IndexOutOfBoundsException e) {
             return null;
         }
     }
@@ -83,6 +83,10 @@ public class Serpent {
     public void increaseSpeed() {
         if(speedPoints > 0)
             speed = 5;
+    }
+
+    public double getSpeed() {
+        return speed;
     }
 
     public void resetSpeedToDefault() {
