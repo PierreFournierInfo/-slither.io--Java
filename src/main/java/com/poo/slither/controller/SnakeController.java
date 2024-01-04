@@ -1,5 +1,6 @@
 package com.poo.slither.controller;
 
+import com.poo.slither.model.Segment;
 import com.poo.slither.model.Serpent;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -97,8 +98,10 @@ public class SnakeController {
     private void mouvementSouris(MouseEvent e) {
         double mouseX = e.getX();
         double mouseY = e.getY();
-        double headX = serpent.getTete().getX();
-        double headY = serpent.getTete().getY();
+        Segment tete = serpent.getTete();
+        if(tete == null) return;
+        double headX = tete.getX();
+        double headY = tete.getY();
         double mouseWorldX = mouseX - (double) WIDTH / 2  + headX;
         double mouseWorldY = mouseY - (double) HEIGHT / 2 + headY;
 

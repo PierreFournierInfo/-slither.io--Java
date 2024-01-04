@@ -14,7 +14,15 @@ public final class SegmentNormal extends Entity implements Segment {
 
     @Override
     public boolean handelCollision(Serpent serpent1, Serpent serpent2) {
-        return true;
+        Segment tete1 = serpent1.getTete();
+        if(tete1 instanceof SegmentBouclier) {
+            serpent1.enlevePremierSegment();
+            serpent1.getTete().moveTo(100, 100);
+            return false;
+        } else {
+            serpent1.meurt();
+            return true;
+        }
     }
 
     @Override

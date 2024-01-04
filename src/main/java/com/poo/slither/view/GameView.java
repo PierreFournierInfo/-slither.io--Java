@@ -38,8 +38,10 @@ public class GameView extends Pane {
     }
 
     private void dessineSerpent(Serpent serpent) {
-        double offsetX = canvas.getWidth() / 2 - jeu.getSerpents().get(0).getTete().getX();
-        double offsetY = canvas.getHeight() / 2 - jeu.getSerpents().get(0).getTete().getY();
+        Segment tete = jeu.getSerpents().get(0).getTete();
+        if(tete == null) return;
+        double offsetX = canvas.getWidth() / 2 - tete.getX();
+        double offsetY = canvas.getHeight() / 2 - tete.getY();
 
         for (Segment segment : serpent.getSegments()) {
             double x = segment.getX() + offsetX;
@@ -57,8 +59,10 @@ public class GameView extends Pane {
     }
 
     private void dessineNourriture(Nourriture food) {
-        double offsetX = canvas.getWidth() / 2 - jeu.getSerpents().get(0).getTete().getX();
-        double offsetY = canvas.getHeight() / 2 - jeu.getSerpents().get(0).getTete().getY();
+        Segment tete = jeu.getSerpents().get(0).getTete();
+        if(tete == null) return;
+        double offsetX = canvas.getWidth() / 2 - tete.getX();
+        double offsetY = canvas.getHeight() / 2 - tete.getY();
 
         NourritureView vueNourriture = new NourritureView(food);
         vueNourriture.dessineNourriture(context, offsetX, offsetY);

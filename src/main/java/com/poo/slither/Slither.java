@@ -12,11 +12,13 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.util.List;
+
 public class Slither extends Application {
     @Override
     public void start(Stage stage) {
         Serpent serpent = new Serpent(100, 100);
-        Jeu jeu = new Jeu(3, 1000);
+        Jeu jeu = new Jeu(15, 1000);
         jeu.addSerpent(serpent);
         GameView gameView = new GameView(jeu);
         Scene scene = new Scene(gameView);
@@ -28,8 +30,13 @@ public class Slither extends Application {
 
         KeyFrame k = new KeyFrame(Duration.seconds(1.0 / 60.0), event -> {
             if(!jeu.getSerpents().isEmpty()) {
-                jeu.updateGame();
-                gameView.renderGame();
+                List<Serpent> dead = jeu.updateGame();
+                if(dead.contains(serpent)) {
+                    System.out.println("You are dead");
+                    stage.close();
+                } else {
+                    gameView.renderGame();
+                }
             }
         });
 

@@ -78,24 +78,25 @@ public class Jeu implements Serializable {
         addNourriture(nourriture);
     }
 
-    public void updateGame() {
-        updateSerpents();
+    public List<Serpent> updateGame() {
+        List<Serpent> dead = updateSerpents();;
         moveSerpents();
         checkCollisions();
+        return dead;
     }
 
-    private void updateSerpents() {
+    private List<Serpent> updateSerpents() {
+        List<Serpent> dead = new ArrayList<>();
         for(Serpent serpent : getSerpents()) {
             if(!serpent.isAlive()) {
                 removeSerpent(serpent);
-                /*if(serpent.equals(controlledSerpent)) {
-                    System.out.println("Game Over");
-                }*/
+                dead.add(serpent);
                 for(Segment segment : serpent.getSegments()) {
                     addNourriture(segment.toFood());
                 }
             }
         }
+        return dead;
     }
 
     private void moveSerpents() {
