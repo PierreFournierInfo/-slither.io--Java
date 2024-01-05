@@ -6,14 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="eb85021b-2d04-4ca2-aaa3-584a29672d7a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/poo/slither/Game.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/poo/slither/Menu.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/poo/slither/Slither.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poo/slither/Slither.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/Jeu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/Jeu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/NourritureSimple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/NourritureSimple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/SegmentNormal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/SegmentNormal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/SegmentNormalFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/SegmentNormalFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/Serpent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/Serpent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/poo/slither/view/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poo/slither/view/GameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,9 +33,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2aUTQ0sZ5wV6O9JgbNvRZqwqDT3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -47,15 +44,49 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.slither.io [:ClientApplication.main()].executor": "Run",
     "Gradle.slither.io [:HelloApplication.main()].executor": "Run",
+    "Gradle.slither.io [:Server.main()].executor": "Run",
     "Gradle.slither.io [:Slither.main()].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "develop",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/ala/Documents/S5/Compléments de POO/Projet/slither.io/src/main/resources"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Slither">
+    <configuration name="ClientApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.poo.slither.network.ClientApplication" />
+      <module name="slither.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.poo.slither.network.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.poo.slither.network.Server" />
+      <module name="slither.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.poo.slither.network.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Slither" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.poo.slither.Slither" />
       <module name="slither.main" />
@@ -71,6 +102,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ClientApplication" />
+        <item itemvalue="Application.Server" />
         <item itemvalue="Application.Slither" />
       </list>
     </recent_temporary>
@@ -92,5 +125,16 @@
       <updated>1704372139735</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

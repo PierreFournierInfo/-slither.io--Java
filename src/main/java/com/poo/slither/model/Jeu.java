@@ -79,10 +79,9 @@ public class Jeu implements Serializable {
     }
 
     public List<Serpent> updateGame() {
-        List<Serpent> dead = updateSerpents();;
         moveSerpents();
         checkCollisions();
-        return dead;
+        return updateSerpents();
     }
 
     private List<Serpent> updateSerpents() {
@@ -147,5 +146,11 @@ public class Jeu implements Serializable {
                 }
             }
         }
+    }
+
+    public void clearFood() {
+    }
+
+    public void clearSerpents() {
     }
 }

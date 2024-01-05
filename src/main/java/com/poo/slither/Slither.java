@@ -3,6 +3,8 @@ package com.poo.slither;
 import com.poo.slither.controller.SnakeController;
 import com.poo.slither.model.Jeu;
 import com.poo.slither.model.Serpent;
+import com.poo.slither.view.GameMenu;
+import com.poo.slither.view.GameOverView;
 import com.poo.slither.view.GameView;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -11,31 +13,42 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.util.List;
+
 public class Slither extends Application {
-    private Stage stage;
-    Slither(Stage stage){
-        this.stage=stage;
-    }
+
     @Override
     public void start(Stage stage) {
-        run_mode_1_player(stage);
+        showMenu(stage);
     }
 
-    private void run_mode_1_player(Stage stage) {
+    private void showMenu(Stage stage) {
+        GameMenu menu = new GameMenu();
+        menu.onePlayerButton().setOnAction(e -> run_mode_1_player(stage, new Jeu(menu.getNbIas(), menu.getNbFood())));
+        menu.twoPlayersButton().setOnAction(e -> run_mode_2_players(stage, new Jeu(menu.getNbIas(), menu.getNbFood())));
+        menu.exitButton().setOnAction(e -> System.exit(0));
+        Scene scene = new Scene(menu);
+        stage.setScene(scene);
+        stage.setTitle("Slither.io");
+        stage.show();
+    }
+
+    private void run_mode_1_player(Stage stage, Jeu jeu) {
         Serpent serpent = new Serpent(100, 100);
-        Jeu jeu = new Jeu(3, 1000);
         jeu.addSerpent(serpent);
         GameView gameView = new GameView(jeu, serpent);
         Scene scene = new Scene(gameView);
         new SnakeController(serpent, scene);
 
-        stage.setTitle("Slither.io");
         stage.setScene(scene);
         stage.show();
 
         KeyFrame k = new KeyFrame(Duration.seconds(1.0 / 60.0), event -> {
             if(!jeu.getSerpents().isEmpty()) {
-                jeu.updateGame();
+                List<Serpent> dead = jeu.updateGame();
+                if(dead.contains(serpent)) {
+                    stage.setScene(new Scene(new GameOverView()));
+                }
                 gameView.renderGame();
             }
         });
@@ -45,8 +58,7 @@ public class Slither extends Application {
         timeline.play();
     }
 
-    private void run_mode_2_players(Stage stage) {
-        Jeu jeu = new Jeu(2, 1000);
+    private void run_mode_2_players(Stage stage, Jeu jeu) {
         Serpent serpent1 = new Serpent(100, 100);
         Serpent serpent2 = new Serpent(300, 300);
         jeu.addSerpent(serpent1);
@@ -70,11 +82,14 @@ public class Slither extends Application {
         stage2.setTitle("Player 2");
         stage2.setScene(scene2);
         stage2.setX(stage.getWidth() + stage.getX() + 10);
+        stage2.setY(stage.getY());
         stage2.show();
 
         KeyFrame k = new KeyFrame(Duration.seconds(1.0 / 60.0), event -> {
             if (!jeu.getSerpents().isEmpty()) {
-                jeu.updateGame();
+                List<Serpent> dead = jeu.updateGame();
+                if(dead.contains(serpent1)) stage.setScene(new Scene(new GameOverView()));
+                if(dead.contains(serpent2)) stage2.setScene(new Scene(new GameOverView()));
                 gameView1.renderGame();
                 gameView2.renderGame();
             }
