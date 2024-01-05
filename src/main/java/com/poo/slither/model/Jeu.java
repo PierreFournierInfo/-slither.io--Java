@@ -91,9 +91,6 @@ public class Jeu implements Serializable {
             if(!serpent.isAlive()) {
                 removeSerpent(serpent);
                 dead.add(serpent);
-                for(Segment segment : serpent.getSegments()) {
-                    addNourriture(segment.toFood());
-                }
             }
         }
         return dead;
@@ -122,6 +119,7 @@ public class Jeu implements Serializable {
                 }
             }
             if(isDead) {
+                serpent.meurt();
                 removeSerpent(serpent);
             }
             nourritures.removeAll(eatenFood);
@@ -140,6 +138,9 @@ public class Jeu implements Serializable {
                         System.out.println("Collision serpents");
                         boolean isDead = segmentVictime.handelCollision(snakeA, snakeB);
                         if(isDead) {
+                            for(Segment segment : snakeA.getSegments()) {
+                                addNourriture(segment.toFood());
+                            }
                             snakeA.meurt();
                         }
                     }
