@@ -12,6 +12,10 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class Slither extends Application {
+    private Stage stage;
+    Slither(Stage stage){
+        this.stage=stage;
+    }
     @Override
     public void start(Stage stage) {
         run_mode_1_player(stage);
