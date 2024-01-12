@@ -25,7 +25,10 @@ public class Slither extends Application {
     private void showMenu(Stage stage) {
         GameMenu menu = new GameMenu();
         menu.onePlayerButton().setOnAction(e -> run_mode_1_player(stage, new Jeu(menu.getNbIas(), menu.getNbFood())));
-        menu.twoPlayersButton().setOnAction(e -> run_mode_2_players(stage, new Jeu(menu.getNbIas(), menu.getNbFood())));
+        menu.twoPlayersButton().setOnAction(e -> {
+            stage.close();
+            run_mode_2_players(new Jeu(menu.getNbIas(), menu.getNbFood()));
+        });
         menu.exitButton().setOnAction(e -> System.exit(0));
         Scene scene = new Scene(menu);
         stage.setScene(scene);
@@ -40,6 +43,8 @@ public class Slither extends Application {
         Scene scene = new Scene(gameView);
         new SnakeController(serpent, scene);
 
+        stage.setFullScreen(true);
+        stage.setMaximized(true);
         stage.setScene(scene);
         stage.show();
 
@@ -58,21 +63,23 @@ public class Slither extends Application {
         timeline.play();
     }
 
-    private void run_mode_2_players(Stage stage, Jeu jeu) {
+    private void run_mode_2_players(Jeu jeu) {
         Serpent serpent1 = new Serpent(100, 100);
         Serpent serpent2 = new Serpent(300, 300);
         jeu.addSerpent(serpent1);
         jeu.addSerpent(serpent2);
 
-        GameView gameView1 = new GameView(jeu, serpent1);
+        int width = GameView.WIDTH / 2, height = GameView.HEIGHT;
+        GameView gameView1 = new GameView(width, height, jeu, serpent1);
         Scene scene1 = new Scene(gameView1);
 
-        GameView gameView2 = new GameView(jeu, serpent2);
+        GameView gameView2 = new GameView(width, height, jeu, serpent2);
         Scene scene2 = new Scene(gameView2);
 
         new SnakeController(serpent1, scene1);
         new SnakeController(serpent2, scene2);
 
+        Stage stage = new Stage();
         stage.setTitle("Player 1");
         stage.setScene(scene1);
         stage.setX(0);

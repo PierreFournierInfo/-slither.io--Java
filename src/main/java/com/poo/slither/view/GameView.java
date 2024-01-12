@@ -4,20 +4,33 @@ import com.poo.slither.model.Jeu;
 import com.poo.slither.model.Nourriture;
 import com.poo.slither.model.Segment;
 import com.poo.slither.model.Serpent;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.stage.Screen;
 
 public class GameView extends Pane {
-    public static int WIDTH = 800;
-    public static int HEIGHT = 600;
+    private static Rectangle2D bounds = Screen.getPrimary().getBounds();
+    public static int WIDTH = (int) bounds.getWidth();
+    public static int HEIGHT = (int) bounds.getHeight();
     private final Canvas canvas;
     private final GraphicsContext context;
     private final Jeu jeu;
     private final Serpent camera;
 
     public GameView(Jeu jeu, Serpent serpent) {
+        this.canvas = new Canvas(WIDTH, HEIGHT);
+        this.context = canvas.getGraphicsContext2D();
+        this.getChildren().add(canvas);
+        this.jeu = jeu;
+        this.camera = serpent;
+    }
+
+    public GameView(int width, int height, Jeu jeu, Serpent serpent) {
+        WIDTH = width;
+        HEIGHT = height;
         this.canvas = new Canvas(WIDTH, HEIGHT);
         this.context = canvas.getGraphicsContext2D();
         this.getChildren().add(canvas);
