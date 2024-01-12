@@ -11,6 +11,9 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Screen;
 
+import static com.poo.slither.model.Jeu.MAP_HEIGHT;
+import static com.poo.slither.model.Jeu.MAP_WIDTH;
+
 public class GameView extends Pane {
     private static Rectangle2D bounds = Screen.getPrimary().getBounds();
     public static int WIDTH = (int) bounds.getWidth();
@@ -40,8 +43,16 @@ public class GameView extends Pane {
 
     public void renderGame() {
         context.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
-        context.setFill(Color.BLACK);
+        context.setFill(Color.WHITE);
         context.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
+
+        // Dessiner les bords de la map
+        Segment tete = camera.getTete();
+        if(tete == null) return;
+        double offsetX = canvas.getWidth() / 2 - tete.getX();
+        double offsetY = canvas.getHeight() / 2 - tete.getY();
+        context.setFill(Color.BLACK);
+        context.fillRect(offsetX, offsetY, MAP_WIDTH, MAP_HEIGHT);
 
         for (Serpent serpent : jeu.getSerpents()) {
             dessineSerpent(serpent);

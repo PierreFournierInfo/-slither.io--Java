@@ -1,5 +1,6 @@
 package com.poo.slither.model;
 
+import com.poo.slither.view.GameView;
 import javafx.geometry.Point2D;
 
 import java.io.Serializable;
@@ -10,6 +11,8 @@ import java.util.Random;
 import static com.poo.slither.model.CollisionUtils.collisionSerpents;
 
 public class Jeu implements Serializable {
+    public static final int MAP_WIDTH = GameView.WIDTH * 4;
+    public static final int MAP_HEIGHT = GameView.HEIGHT * 4;
     private final List<Serpent> serpents;
     private final List<Nourriture> nourritures;
     private final int nb_food;
@@ -51,8 +54,8 @@ public class Jeu implements Serializable {
     private void genereIAs() {
         for(int i = 0; i < nb_ia; i++) {
             Random random = new Random();
-            double x = random.nextDouble() * 3000;
-            double y = random.nextDouble() * 3000;
+            double x = random.nextDouble() * (MAP_WIDTH - 100);
+            double y = random.nextDouble() * (MAP_HEIGHT - 100);
             SerpentIA serpentIA = new SerpentIA(x, y);
             addSerpent(serpentIA);
         }
@@ -60,11 +63,19 @@ public class Jeu implements Serializable {
 
     private void addNourriture() {
         Random random = new Random();
-        double x = random.nextDouble() * 3000;
-        double y = random.nextDouble() * 3000;
+        double x = random.nextDouble() * (MAP_WIDTH - 50);
+        double y = random.nextDouble() * (MAP_HEIGHT - 50);
         Nourriture nourriture;
 
-        int randomType = new Random().nextInt(5);
+        int randomType;
+        if (Math.random() < 0.05) {
+            // 5% de chance pour générer Bouclier
+            randomType = 3;
+        } else if (Math.random() < 0.1) {
+            randomType = 4;
+        } else {
+            randomType = new Random().nextInt(3);
+        }
 
         nourriture = switch (randomType) {
             case 0 -> new NourritureSimple(x, y);
@@ -126,6 +137,14 @@ public class Jeu implements Serializable {
     }
 
     private void collisionsSerpents() {
+        for (Serpent serpent : serpents) {
+            double serpentX = serpent.getTete().getX();
+            double serpentY = serpent.getTete().getY();
+            if (serpentX < 0 || serpentX >= MAP_WIDTH || serpentY < 0 || serpentY >= MAP_HEIGHT) {
+                serpent.meurt();
+            }
+        }
+
         for (int i = 0; i < getSerpents().size(); i++) {
             Serpent snakeA = getSerpents().get(i);
 

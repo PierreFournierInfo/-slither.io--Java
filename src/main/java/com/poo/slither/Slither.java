@@ -15,6 +15,9 @@ import javafx.util.Duration;
 
 import java.util.List;
 
+import static com.poo.slither.model.Jeu.MAP_HEIGHT;
+import static com.poo.slither.model.Jeu.MAP_WIDTH;
+
 public class Slither extends Application {
 
     @Override
@@ -37,14 +40,12 @@ public class Slither extends Application {
     }
 
     private void run_mode_1_player(Stage stage, Jeu jeu) {
-        Serpent serpent = new Serpent(100, 100);
+        Serpent serpent = new Serpent(MAP_WIDTH / 2., MAP_HEIGHT / 2.);
         jeu.addSerpent(serpent);
         GameView gameView = new GameView(jeu, serpent);
         Scene scene = new Scene(gameView);
         new SnakeController(serpent, scene);
 
-        stage.setFullScreen(true);
-        stage.setMaximized(true);
         stage.setScene(scene);
         stage.show();
 
@@ -64,8 +65,8 @@ public class Slither extends Application {
     }
 
     private void run_mode_2_players(Jeu jeu) {
-        Serpent serpent1 = new Serpent(100, 100);
-        Serpent serpent2 = new Serpent(300, 300);
+        Serpent serpent1 = new Serpent(MAP_WIDTH / 2., MAP_HEIGHT / 2.);
+        Serpent serpent2 = new Serpent(MAP_WIDTH / 2. + 200, MAP_HEIGHT / 2. + 200);
         jeu.addSerpent(serpent1);
         jeu.addSerpent(serpent2);
 
