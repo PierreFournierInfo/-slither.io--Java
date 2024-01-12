@@ -1,10 +1,11 @@
 package com.poo.slither.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-public class Serpent {
+public class Serpent implements Serializable {
     public static final int DEFAULT_SIZE = 10;
     private final List<Segment> serpent;
     private SegmentFactory segmentFactory;

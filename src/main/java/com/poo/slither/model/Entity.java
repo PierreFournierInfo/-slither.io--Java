@@ -22,6 +22,10 @@ public class Entity {
         this.position = new Point2D(x, y);
     }
 
+    public Entity() {
+        this.position = new Point2D(0, 0);
+    }
+
     /**
      * Get the x-coordinate of the entity.
      *

@@ -1,9 +1,11 @@
 package com.poo.slither.model;
 
+import java.io.Serializable;
+
 /**
  * Interface representing a factory for creating segments in the Slither game.
  */
-public interface SegmentFactory {
+public interface SegmentFactory extends Serializable {
 
     /**
      * Create a segment with the specified coordinates.
