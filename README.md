@@ -5,6 +5,8 @@
 Slither est notre projet de programmation pour le module de compléments de poo en premier semestre de la troisième 
 année de la licence, c'est une implementation en java du jeu slither.io avec des règles personnalisées en plus.
 
+![slither](src/main/resources/slither.png)
+
 ## Table des Matières
 
 - [Introduction](#introduction)
