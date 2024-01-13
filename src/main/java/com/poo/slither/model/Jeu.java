@@ -11,8 +11,8 @@ import java.util.Random;
 import static com.poo.slither.model.CollisionUtils.collisionSerpents;
 
 public class Jeu implements Serializable {
-    public static final int MAP_WIDTH = GameView.WIDTH * 4;
-    public static final int MAP_HEIGHT = GameView.HEIGHT * 4;
+    public static final int MAP_WIDTH = 5000;
+    public static final int MAP_HEIGHT = 5000;
     private final List<Serpent> serpents;
     private final List<Nourriture> nourritures;
     private final int nb_food;

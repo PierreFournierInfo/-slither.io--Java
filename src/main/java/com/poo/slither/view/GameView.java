@@ -15,7 +15,7 @@ import static com.poo.slither.model.Jeu.MAP_HEIGHT;
 import static com.poo.slither.model.Jeu.MAP_WIDTH;
 
 public class GameView extends Pane {
-    private static Rectangle2D bounds = Screen.getPrimary().getBounds();
+    private static final Rectangle2D bounds = Screen.getPrimary().getBounds();
     public static int WIDTH = (int) bounds.getWidth();
     public static int HEIGHT = (int) bounds.getHeight();
     private final Canvas canvas;

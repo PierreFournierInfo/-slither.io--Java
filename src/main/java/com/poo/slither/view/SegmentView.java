@@ -7,7 +7,6 @@ import static com.poo.slither.view.GameView.*;
 
 public class SegmentView {
     public static final double SEGMENT_SIZE = 20; // Le rayon
-    public static final double GAP = SEGMENT_SIZE / 3;
     private final Segment segment;
     public SegmentView(Segment segment) {
         this.segment = segment;
