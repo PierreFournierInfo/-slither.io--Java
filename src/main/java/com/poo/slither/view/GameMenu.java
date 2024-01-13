@@ -56,16 +56,19 @@ public class GameMenu extends VBox {
 
     private Button createButton(String text) {
         Button button = new Button(text);
-        button.setPrefWidth(200);
-        button.setPrefHeight(40);
-        button.setStyle("-fx-background-color: orange; -fx-text-fill: white; -fx-font-size: 17px; -fx-font-weight: bold; -fx-background-radius: 20;");        return button;
+        button.setPrefWidth((double) WIDTH / 5);
+        button.setPrefHeight((double) HEIGHT / 13);
+        int font_size = WIDTH / 70;
+        button.setStyle("-fx-background-color: orange; -fx-text-fill: white; -fx-font-size: "+ font_size + "px; -fx-font-weight: bold; -fx-background-radius: 20;");
+        return button;
     }
 
     private Slider createSlider(double min, double max, double initialValue) {
         Slider slider = new Slider(min, max, initialValue);
-        slider.setPrefWidth(200);
-        slider.setPrefHeight(40);
-        slider.setStyle("-fx-control-inner-background: green; -fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: white;");
+        slider.setPrefWidth(WIDTH / 5.);
+        slider.setPrefHeight(HEIGHT / 13.);
+        int font_size = WIDTH / 70;
+        slider.setStyle("-fx-control-inner-background: green; -fx-font-size: "+ font_size + "px; -fx-font-weight: bold; -fx-text-fill: white;");
         slider.setShowTickLabels(true);
         slider.setShowTickMarks(true);
         slider.setMajorTickUnit((max - min) / 5);
