@@ -2,7 +2,7 @@ package com.poo.slither.model;
 
 import javafx.scene.paint.Color;
 
-public class SegmentFaible extends Entity implements Segment {
+public final class SegmentFaible extends Entity implements Segment {
 
     public SegmentFaible(double x, double y) {
         super(x, y);

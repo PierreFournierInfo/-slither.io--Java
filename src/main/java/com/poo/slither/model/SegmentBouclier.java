@@ -2,7 +2,7 @@ package com.poo.slither.model;
 
 import javafx.scene.paint.Color;
 
-public class SegmentBouclier extends Entity implements Segment {
+public final class SegmentBouclier extends Entity implements Segment {
     public SegmentBouclier(double x, double y) {
         super(x, y);
     }

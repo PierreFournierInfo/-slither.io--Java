@@ -73,9 +73,6 @@ public class GameMenu extends VBox {
         slider.setShowTickMarks(true);
         slider.setMajorTickUnit((max - min) / 5);
         slider.setBlockIncrement(1);
-
-
-
         return slider;
     }
 

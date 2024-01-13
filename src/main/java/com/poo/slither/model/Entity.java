@@ -5,7 +5,7 @@ import javafx.geometry.Point2D;
 /**
  * Base class representing an entity in the Slither game.
  */
-public class Entity {
+public abstract class Entity {
 
     /**
      * The position of the entity.

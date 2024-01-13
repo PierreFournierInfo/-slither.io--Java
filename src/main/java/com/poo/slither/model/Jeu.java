@@ -10,7 +10,7 @@ import java.util.Random;
 
 import static com.poo.slither.model.CollisionUtils.collisionSerpents;
 
-public class Jeu implements Serializable {
+public final class Jeu implements Serializable {
     public static final int MAP_WIDTH = 5000;
     public static final int MAP_HEIGHT = 5000;
     private final List<Serpent> serpents;
@@ -130,6 +130,7 @@ public class Jeu implements Serializable {
             }
             if(isDead) {
                 serpent.meurt();
+                addNourriture();
                 removeSerpent(serpent);
             }
             nourritures.removeAll(eatenFood);
@@ -141,21 +142,22 @@ public class Jeu implements Serializable {
             double serpentX = serpent.getTete().getX();
             double serpentY = serpent.getTete().getY();
             if (serpentX < 0 || serpentX >= MAP_WIDTH || serpentY < 0 || serpentY >= MAP_HEIGHT) {
+                for(Segment segment : serpent.getSegments()) {
+                    addNourriture(segment.toFood());
+                }
                 serpent.meurt();
             }
         }
 
-        for (int i = 0; i < getSerpents().size(); i++) {
-            Serpent snakeA = getSerpents().get(i);
-
-            for (int j = 0; j < getSerpents().size(); j++) {
-                if(j != i) {
-                    Serpent snakeB = getSerpents().get(j);
+        for (Serpent snakeA : serpents) {
+            for (Serpent snakeB : serpents) {
+                if(snakeA != snakeB) {
                     Segment segmentVictime = collisionSerpents(snakeA, snakeB);
                     if (segmentVictime != null) {
                         System.out.println("Collision serpents");
                         boolean isDead = segmentVictime.handelCollision(snakeA, snakeB);
                         if(isDead) {
+                            System.out.println("yes is dead");
                             for(Segment segment : snakeA.getSegments()) {
                                 addNourriture(segment.toFood());
                             }
