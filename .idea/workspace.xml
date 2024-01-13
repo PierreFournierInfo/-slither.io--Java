@@ -5,20 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb85021b-2d04-4ca2-aaa3-584a29672d7a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/background.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/Jeu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/Jeu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/NourritureBouclier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/NourritureBouclier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/NourriturePoison.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/NourriturePoison.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/NourriturePont.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/NourriturePont.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/NourritureVitesse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/NourritureVitesse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/SegmentBouclier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/SegmentBouclier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/SegmentBouclierFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/SegmentBouclierFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/SegmentFaible.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/SegmentFaible.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/SegmentFaibleFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/SegmentFaibleFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/SegmentNormal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poo/slither/model/SegmentNormal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/poo/slither/view/GameMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/poo/slither/view/GameMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/background.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +81,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "develop",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/ala/Documents/S5/Compléments de POO/Projet/slither.io",
+    "last_opened_file_path": "/home/ala/Documents/S5/Compléments de POO/Projet/slither.io/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",

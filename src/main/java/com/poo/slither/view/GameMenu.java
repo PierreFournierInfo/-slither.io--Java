@@ -24,7 +24,7 @@ public class GameMenu extends VBox {
         setPadding(new Insets(20, 20, 20, 20));
         setPrefSize(WIDTH, HEIGHT);
 
-        Image background = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/background.jpg")), WIDTH, HEIGHT, false,true);
+        Image background = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/background.png")), WIDTH, HEIGHT, false,true);
         setBackground(new Background(new BackgroundImage(background, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT)));
 
         onePlayerButton = createButton("Play with One Player");
@@ -41,7 +41,7 @@ public class GameMenu extends VBox {
 
     private VBox createSliderVbox(String label, Slider slider) {
         Label sliderLabel = new Label(label);
-        sliderLabel.setStyle("-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;");
+        sliderLabel.setStyle("-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;");
 
         VBox sliderBox = new VBox(5);
         sliderBox.setAlignment(Pos.CENTER);
@@ -58,8 +58,8 @@ public class GameMenu extends VBox {
         Button button = new Button(text);
         button.setPrefWidth((double) WIDTH / 5);
         button.setPrefHeight((double) HEIGHT / 13);
-        int font_size = WIDTH / 70;
-        button.setStyle("-fx-background-color: orange; -fx-text-fill: white; -fx-font-size: "+ font_size + "px; -fx-font-weight: bold; -fx-background-radius: 20;");
+        int font_size = WIDTH / 60;
+        button.setStyle("-fx-background-color: black; -fx-text-fill: white; -fx-font-size: "+ font_size + "px; -fx-font-weight: bold; -fx-background-radius: 20;");
         return button;
     }
 
@@ -67,7 +67,7 @@ public class GameMenu extends VBox {
         Slider slider = new Slider(min, max, initialValue);
         slider.setPrefWidth(WIDTH / 5.);
         slider.setPrefHeight(HEIGHT / 13.);
-        int font_size = WIDTH / 70;
+        int font_size = WIDTH / 60;
         slider.setStyle("-fx-control-inner-background: green; -fx-font-size: "+ font_size + "px; -fx-font-weight: bold; -fx-text-fill: white;");
         slider.setShowTickLabels(true);
         slider.setShowTickMarks(true);
