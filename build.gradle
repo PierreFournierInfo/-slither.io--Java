@@ -34,6 +34,10 @@ javafx {
     modules = [ 'javafx.controls', 'javafx.fxml' ]
 }
 
+javadoc {
+    options.addStringOption('Xdoclint:none', '-quiet')
+}
+
 dependencies {
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
