@@ -11,6 +11,7 @@ année de la licence, c'est une implementation en java du jeu slither.io avec de
 
 - [Introduction](#introduction)
 - [Caractéristiques](#caractéristiques)
+- [Requirements](#requirements)
 - [Usage](#usage)
 - [Tests](#tests)
 - [Contribution](#contribution)
@@ -51,6 +52,9 @@ nourritures et les segments que le jeu propose :
 - Le terrain est sans bords, mais il y a comme même une limite qui est imposé qui est la taille de la carte du jeu qui est limitée
 par un rectangle noir qui recouvre la zone du jeu 
 
+## Requirements
+Le projet utilise la version de java 17, la bibliothèque junit version 5.10.0 et javafx version 17.0.6
+
 ## Usage
 
 Pour compiler le projet, tapez la commande suivante dans votre shell
@@ -81,4 +85,10 @@ Pour continuer à développer et à améliorer le jeu, vous pouvez le cloner en 
 ```bash
     # Cloner le dépot pour contribuer au développement du projet
     git clone https://gaufre.informatique.univ-paris-diderot.fr/tamdrari/slither.io.git
+```
+Pour générer la documentation du projet utilisez la commande suivante 
+
+```bash
+    # Générer la javadoc du projet
+    ./gradlew javadoc
 ```
