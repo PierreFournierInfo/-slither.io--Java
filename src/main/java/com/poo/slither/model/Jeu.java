@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Random;
 
 import static com.poo.slither.model.CollisionUtils.collisionSerpents;
+import static com.poo.slither.view.SegmentView.SEGMENT_SIZE;
 
 public final class Jeu implements Serializable {
     public static final int MAP_WIDTH = 5000;
@@ -139,7 +140,7 @@ public final class Jeu implements Serializable {
         for (Serpent serpent : serpents) {
             double serpentX = serpent.getTete().getX();
             double serpentY = serpent.getTete().getY();
-            if (serpentX < 0 || serpentX >= MAP_WIDTH || serpentY < 0 || serpentY >= MAP_HEIGHT) {
+            if (serpentX < 0 || serpentX >= MAP_WIDTH - SEGMENT_SIZE / 2 || serpentY < 0 || serpentY >= MAP_HEIGHT - SEGMENT_SIZE / 2 ) {
                 for(Segment segment : serpent.getSegments()) {
                     addNourriture(segment.toFood());
                 }
