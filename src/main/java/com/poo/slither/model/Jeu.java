@@ -153,10 +153,8 @@ public final class Jeu implements Serializable {
                 if(snakeA != snakeB) {
                     Segment segmentVictime = collisionSerpents(snakeA, snakeB);
                     if (segmentVictime != null) {
-                        System.out.println("Collision serpents");
                         boolean isDead = segmentVictime.handelCollision(snakeA, snakeB);
                         if(isDead) {
-                            System.out.println("yes is dead");
                             for(Segment segment : snakeA.getSegments()) {
                                 addNourriture(segment.toFood());
                             }
