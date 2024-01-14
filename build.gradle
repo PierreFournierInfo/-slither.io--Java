@@ -17,6 +17,12 @@ ext {
     junitVersion = '5.10.0'
 }
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
 sourceCompatibility = '17'
 targetCompatibility = '17'
 
@@ -39,7 +45,6 @@ javadoc {
 }
 
 dependencies {
-
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 }
