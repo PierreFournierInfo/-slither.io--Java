@@ -1,11 +1,12 @@
 package com.poo.slither.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-public class Serpent {
-    private static final int DEFAULT_SIZE = 10;
+public class Serpent implements Serializable {
+    public static final int DEFAULT_SIZE = 10;
     private final List<Segment> serpent;
     private SegmentFactory segmentFactory;
     private double deltaX, deltaY;
@@ -45,7 +46,7 @@ public class Serpent {
     public Segment getTete() {
         try {
             return serpent.get(0);
-        } catch (NoSuchElementException e) {
+        } catch (IndexOutOfBoundsException e) {
             return null;
         }
     }
@@ -74,5 +75,56 @@ public class Serpent {
 
     public boolean isAlive() {
         return !serpent.isEmpty();
+    }
+
+    public void meurt() {
+        serpent.clear();
+    }
+
+    public void increaseSpeed() {
+        if(speedPoints > 0)
+            speed = 5;
+    }
+
+    public double getSpeed() {
+        return speed;
+    }
+
+    public void resetSpeedToDefault() {
+        speed = 3;
+    }
+
+    public int getSpeedPoints() {
+        return speedPoints;
+    }
+
+    public void gainSpeedPoints() {
+        speedPoints += 1;
+    }
+
+    public void removeSpeedPoints() {
+        if(speedPoints > 0)
+            speedPoints -= 1;
+    }
+
+    boolean enlevePremierSegment() {
+        if(serpent.isEmpty()) return true;
+        serpent.remove(0);
+        return serpent.isEmpty();
+    }
+
+    boolean cutFrom(SegmentFaible segmentFaible) {
+        int i;
+        for(i = 0; i < serpent.size(); i++) {
+            Segment segment = serpent.get(i);
+            if(segment.getX() == segmentFaible.getX() && segment.getY() == segmentFaible.getY()) {
+                break;
+            }
+        }
+
+        if (serpent.size() > i) {
+            serpent.subList(i, serpent.size()).clear();
+        }
+        return isAlive();
     }
 }

@@ -20,18 +20,22 @@ ext {
 sourceCompatibility = '17'
 targetCompatibility = '17'
 
-tasks.withType(JavaCompile) {
+tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
 }
 
 application {
     mainModule = 'com.poo.slither'
-    mainClass = 'com.poo.slither.HelloApplication'
+    mainClass = 'com.poo.slither.Slither'
 }
 
 javafx {
     version = '17.0.6'
-    modules = ['javafx.controls', 'javafx.fxml']
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+javadoc {
+    options.addStringOption('Xdoclint:none', '-quiet')
 }
 
 dependencies {
