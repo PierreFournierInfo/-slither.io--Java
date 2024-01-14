@@ -110,7 +110,7 @@ public class Serpent implements Serializable {
     boolean enlevePremierSegment() {
         if(serpent.isEmpty()) return true;
         serpent.remove(0);
-        return serpent.size() <= 1;
+        return serpent.isEmpty();
     }
 
     boolean cutFrom(SegmentFaible segmentFaible) {

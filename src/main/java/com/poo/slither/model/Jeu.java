@@ -129,9 +129,7 @@ public final class Jeu implements Serializable {
                 }
             }
             if(isDead) {
-                serpent.meurt();
                 addNourriture();
-                removeSerpent(serpent);
             }
             nourritures.removeAll(eatenFood);
         }
